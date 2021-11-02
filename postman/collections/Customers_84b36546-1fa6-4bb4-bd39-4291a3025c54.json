@@ -205,12 +205,13 @@
                         {
                             "listen": "test",
                             "script": {
+                                "id": "6359756c-4e00-4231-8246-c5c240f5d693",
                                 "exec": [
                                     "const res = pm.response.json();",
                                     "const id = pm.globals.get('id');",
                                     "",
-                                    "pm.test('Status code is 200', () => {",
-                                    "    pm.response.to.have.status(200);",
+                                    "pm.test('Status code is 201', () => {",
+                                    "    pm.response.to.have.status(201);",
                                     "});",
                                     "",
                                     "pm.test('One user exists', () => {",
@@ -240,8 +241,7 @@
                                     "    method: 'delete'",
                                     "});"
                                 ],
-                                "type": "text/javascript",
-                                "id": "6359756c-4e00-4231-8246-c5c240f5d693"
+                                "type": "text/javascript"
                             },
                             "exec": [
                                 "const res = pm.response.json();",
@@ -282,6 +282,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
+                                "id": "7f62b653-13c9-4612-91bd-99664b8ac1d6",
                                 "exec": [
                                     "const firstName = pm.variables.get('firstName');",
                                     "const lastName = pm.variables.get('lastName');",
@@ -300,8 +301,7 @@
                                     "    pm.globals.set('id', res.id);",
                                     "});"
                                 ],
-                                "type": "text/javascript",
-                                "id": "7f62b653-13c9-4612-91bd-99664b8ac1d6"
+                                "type": "text/javascript"
                             },
                             "exec": [
                                 "const firstName = pm.variables.get('firstName');",

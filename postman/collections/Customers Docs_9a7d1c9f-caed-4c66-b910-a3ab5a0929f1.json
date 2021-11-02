@@ -1,0 +1,511 @@
+{
+    "info": {
+        "_postman_id": "12f90c0c-7a27-475c-8a24-8a4a77666eae",
+        "name": "Customers Docs",
+        "description": "API for creating and managing banking customers.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "get",
+            "item": [
+                {
+                    "name": "Get all users",
+                    "id": "c1b771ed-bde4-4594-a81f-f6546f7f686d",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/get?all=true",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "get"
+                            ],
+                            "query": [
+                                {
+                                    "key": "all",
+                                    "value": "true"
+                                }
+                            ]
+                        },
+                        "description": "Get all users in the system."
+                    },
+                    "response": [
+                        {
+                            "id": "ae442207-2824-4365-8407-c4845868c3d5",
+                            "name": "200 OK",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/get?all=true",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "get"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "all",
+                                            "value": "true"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "disabled": false,
+                                    "key": "Connection",
+                                    "value": "keep-alive",
+                                    "description": ""
+                                },
+                                {
+                                    "disabled": false,
+                                    "key": "Content-Length",
+                                    "value": "105",
+                                    "description": ""
+                                },
+                                {
+                                    "disabled": false,
+                                    "key": "Date",
+                                    "value": "Fri, 11 Jan 2019 00:00:53 GMT",
+                                    "description": ""
+                                },
+                                {
+                                    "disabled": false,
+                                    "key": "ETag",
+                                    "value": "W/\"69-ti7ujd/Cyb8EeoWoqRXh482Zy5o\"",
+                                    "description": ""
+                                },
+                                {
+                                    "disabled": false,
+                                    "key": "X-Powered-By",
+                                    "value": "Express",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"status\": \"success\"\n },\n {\n  \"firstName\": \"Ben\",\n  \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\",\n  \"lastName\": \"Smith\"\n }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get users by last name",
+                    "id": "4d9e82af-a146-4d52-85f2-48f52d694ae8",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/get/?firstName={{$randomLastName}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "get",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "firstName",
+                                    "value": "{{$randomLastName}}",
+                                    "description": "The user's first name (required)"
+                                }
+                            ]
+                        },
+                        "description": "Retrieves all users with the given `firstName`."
+                    },
+                    "response": [
+                        {
+                            "id": "47f4e6ad-8a5d-4179-9348-08c2dd2febed",
+                            "name": "200",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/get/?firstName={{$randomLastName}}",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "get",
+                                        ""
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "firstName",
+                                            "value": "{{$randomLastName}}"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "disabled": false,
+                                    "key": "Connection",
+                                    "value": "keep-alive",
+                                    "description": ""
+                                },
+                                {
+                                    "disabled": false,
+                                    "key": "Content-Length",
+                                    "value": "105",
+                                    "description": ""
+                                },
+                                {
+                                    "disabled": false,
+                                    "key": "Date",
+                                    "value": "Fri, 11 Jan 2019 00:05:34 GMT",
+                                    "description": ""
+                                },
+                                {
+                                    "disabled": false,
+                                    "key": "ETag",
+                                    "value": "W/\"69-F/ktIhtM5We/sndYYNUK1vmdEnQ\"",
+                                    "description": ""
+                                },
+                                {
+                                    "disabled": false,
+                                    "key": "X-Powered-By",
+                                    "value": "Express",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"status\": \"success\"\n },\n {\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\",\n  \"lastName\": \"{{$randomLastName}}\"\n }\n]"
+                        }
+                    ]
+                }
+            ],
+            "id": "273fa8f5-7960-4316-9089-a1f205f1b93a"
+        },
+        {
+            "name": "New user",
+            "id": "1c142232-f42e-4a02-acd2-71a40ef76793",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/create",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "create"
+                    ]
+                },
+                "description": "Creates a new user in the system. The user will be assigned an ID automatically. This can be found in the response."
+            },
+            "response": [
+                {
+                    "id": "cfda6974-b564-44c8-ae9e-f9f684b804b8",
+                    "name": "New user",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/create",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "create"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "disabled": false,
+                            "key": "Connection",
+                            "value": "keep-alive",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "Content-Length",
+                            "value": "101",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "Date",
+                            "value": "Thu, 10 Jan 2019 23:58:59 GMT",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "ETag",
+                            "value": "W/\"65-KsPJ95rCxmmvvRBY2Sqroxk2vmA\"",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "X-Powered-By",
+                            "value": "Express",
+                            "description": ""
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"firstName\": \"Ben\",\n \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\",\n \"lastName\": \"Smith\",\n \"status\": \"success\"\n}"
+                }
+            ]
+        },
+        {
+            "name": "Delete user",
+            "id": "15e2919f-ac60-462c-81b9-2731adc6f541",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "text/plain"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "\"\""
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/delete?id={{id}}",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "delete"
+                    ],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "{{id}}",
+                            "description": "The user's ID"
+                        }
+                    ]
+                },
+                "description": "Deletes a user from the system by `id`."
+            },
+            "response": [
+                {
+                    "id": "fed89ae5-3eef-43fb-8271-96ec6b1f5d55",
+                    "name": "Delete user",
+                    "originalRequest": {
+                        "method": "DELETE",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "\"\""
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/delete?id={{id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "delete"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "{{id}}"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "disabled": false,
+                            "key": "Connection",
+                            "value": "keep-alive",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "Content-Length",
+                            "value": "64",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "Date",
+                            "value": "Fri, 11 Jan 2019 00:20:55 GMT",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "ETag",
+                            "value": "W/\"40-bT/ASzl0KO3wj/eo2xEBaHPLnvk\"",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "X-Powered-By",
+                            "value": "Express",
+                            "description": ""
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\",\n \"status\": \"success\"\n}"
+                }
+            ]
+        },
+        {
+            "name": "Update user",
+            "id": "f093a787-4b91-4587-8b71-40c8b0fc9d5a",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"firstName\": \"Benjamin\",\n    \"password\": \"foobar\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/update?id={{id}}",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "update"
+                    ],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "{{id}}",
+                            "description": "The user's ID (required)"
+                        }
+                    ]
+                },
+                "description": "Send the keys that you'd like to update, this can be one or more of `firstName`, `lastName` and `password`."
+            },
+            "response": [
+                {
+                    "id": "67904889-094b-4838-a21e-b76cd4968428",
+                    "name": "Update user",
+                    "originalRequest": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"firstName\": \"Benjamin\",\n    \"password\": \"foobar\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/update?id={{id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "update"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "{{id}}"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "disabled": false,
+                            "key": "Connection",
+                            "value": "keep-alive",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "Content-Length",
+                            "value": "106",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "Date",
+                            "value": "Fri, 11 Jan 2019 00:18:07 GMT",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "ETag",
+                            "value": "W/\"6a-SA9mzR+M2pmN7WPGgLm1ZqtRYis\"",
+                            "description": ""
+                        },
+                        {
+                            "disabled": false,
+                            "key": "X-Powered-By",
+                            "value": "Express",
+                            "description": ""
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"firstName\": \"Benjamin\",\n \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\",\n \"lastName\": \"Smith\",\n \"status\": \"success\"\n}"
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "id": "66b14001-ccfc-4a54-b15e-2c61a4116b05",
+            "key": "baseUrl",
+            "value": "https://3f9ab1dc-fede-484c-b519-0cc8b90c827a.mock.pstmn.io",
+            "type": "string"
+        }
+    ]
+}
